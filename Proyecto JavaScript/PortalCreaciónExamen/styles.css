@@ -1,0 +1,447 @@
+/* ==================== GENERAL ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==================== HEADER ==================== */
+#header {
+    background-color: #3a3a3a;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    background-color: #6b7280;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.logo-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+#navbar-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+#navbar-menu a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 14px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#navbar-menu a:hover,
+#navbar-menu a.active {
+    color: white;
+    border-bottom-color: #f59e0b;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+#main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Page Header */
+#page-header {
+    margin-bottom: 40px;
+}
+
+#page-header h2 {
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+#page-header h1 {
+    font-size: 32px;
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+#page-header p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ==================== SECTIONS ==================== */
+#actualizar-examen-section,
+#examenes-registrados-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#actualizar-examen-section h3,
+#examenes-registrados-section h3 {
+    font-size: 18px;
+    color: #1f2937;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* ==================== FORM STYLES ==================== */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.form-group input[readonly] {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ==================== PREGUNTAS SECTION ==================== */
+#preguntas-section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #e5e7eb;
+}
+
+#preguntas-section h4 {
+    font-size: 16px;
+    color: #1f2937;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.pregunta-item {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.pregunta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.pregunta-header label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.pregunta-body {
+    margin-bottom: 12px;
+}
+
+.pregunta-body textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Respuestas */
+.respuestas-container {
+    margin: 15px 0;
+    padding-left: 15px;
+    border-left: 2px solid #d1d5db;
+}
+
+.respuesta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.respuesta-item input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.respuesta-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.respuesta-input:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.btn-eliminar-respuesta {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-eliminar-respuesta:hover {
+    background-color: #fecaca;
+}
+
+/* ==================== BUTTONS ==================== */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #f59e0b;
+    color: white;
+    padding: 10px 24px;
+    margin-right: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #d97706;
+}
+
+.btn-secondary {
+    background-color: #e5e7eb;
+    color: #374151;
+    padding: 10px 24px;
+}
+
+.btn-secondary:hover {
+    background-color: #d1d5db;
+}
+
+.btn-agregar-respuesta,
+.btn-agregar-pregunta {
+    background-color: #dbeafe;
+    color: #1e40af;
+    padding: 8px 16px;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.btn-agregar-respuesta:hover,
+.btn-agregar-pregunta:hover {
+    background-color: #bfdbfe;
+}
+
+.btn-eliminar {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-eliminar:hover {
+    background-color: #fecaca;
+}
+
+.form-actions {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ==================== TABLE STYLES ==================== */
+#examenes-tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#examenes-tabla thead {
+    background-color: #f3f4f6;
+}
+
+#examenes-tabla th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+#examenes-tabla td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #4b5563;
+    font-size: 14px;
+}
+
+#examenes-tabla tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.btn-editar,
+.btn-eliminar-tabla {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.btn-editar {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.btn-editar:hover {
+    background-color: #bfdbfe;
+}
+
+.btn-eliminar-tabla {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.btn-eliminar-tabla:hover {
+    background-color: #fecaca;
+}
+
+/* ==================== FOOTER ==================== */
+#footer {
+    background-color: #1f2937;
+    color: #9ca3af;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #navbar-menu ul {
+        gap: 15px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    #main-content {
+        padding: 15px 10px;
+    }
+
+    #page-header h1 {
+        font-size: 24px;
+    }
+
+    #actualizar-examen-section,
+    #examenes-registrados-section {
+        padding: 15px;
+    }
+
+    #examenes-tabla {
+        font-size: 12px;
+    }
+
+    #examenes-tabla th,
+    #examenes-tabla td {
+        padding: 8px 6px;
+    }
+
+    .btn-editar,
+    .btn-eliminar-tabla {
+        display: block;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+}
