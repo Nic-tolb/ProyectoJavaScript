@@ -1,27 +1,20 @@
 export function usuariosIniciales(){
+    
 
-
-let usuarios =
-localStorage.getItem("usuarios");
+let usuarios = localStorage.getItem("usuarios");
 
 
 if(!usuarios){
 
 
-let datos=[
+let datos = [
 
 {
-
 nombre:"Administrador",
-
 email:"admin@gmail.com",
-
 password:"1234",
-
 cargo:"Administrativo"
-
 }
-
 
 ];
 
@@ -45,25 +38,27 @@ JSON.stringify(datos)
 export function validarUsuario(email,password){
 
 
-let usuarios =
-JSON.parse(
+let usuarios = JSON.parse(
 
 localStorage.getItem("usuarios")
 
-)||[];
+) || [];
 
 
 
-return usuarios.find(
+let usuario = usuarios.find(
 
-usuario =>
+(user)=> 
 
-usuario.email === email &&
+user.email === email &&
 
-usuario.password === password
+user.password === password
 
 );
 
+
+
+return usuario;
 
 
 }
@@ -79,8 +74,4 @@ localStorage.setItem(
 
 JSON.stringify(usuario)
 
-);
-
-
-
-}
+);}

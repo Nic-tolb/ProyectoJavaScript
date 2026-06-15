@@ -12,7 +12,6 @@ from "./auth.js";
 
 
 
-
 usuariosIniciales();
 
 
@@ -21,6 +20,7 @@ class LoginAcme extends HTMLElement{
 
 
 constructor(){
+
 
 super();
 
@@ -39,16 +39,26 @@ mode:"open"
 connectedCallback(){
 
 
-this.shadowRoot.innerHTML=`
+
+this.shadowRoot.innerHTML = `
+
 
 <div class="card">
 
 
 <h1>
 
-Acme School
+Acme
 
 </h1>
+
+
+<p class="subtitle">
+
+Plataforma de exámenes
+
+</p>
+
 
 
 <input
@@ -57,7 +67,8 @@ id="email"
 
 type="email"
 
-placeholder="Correo">
+placeholder="Correo electrónico">
+
 
 
 <input
@@ -69,11 +80,13 @@ type="password"
 placeholder="Contraseña">
 
 
+
 <button id="mostrar">
 
 Mostrar contraseña
 
 </button>
+
 
 
 <button id="ingresar">
@@ -84,15 +97,15 @@ Ingresar
 
 
 
-<p id="mensaje"></p>
+<p id="mensaje">
 
+</p>
 
 
 </div>
 
 
 `;
-
 
 
 
@@ -160,20 +173,6 @@ this.shadowRoot
 
 
 
-if(!email || !password){
-
-
-mensaje.textContent=
-
-"Complete todos los campos";
-
-
-return;
-
-}
-
-
-
 let usuario =
 
 validarUsuario(
@@ -189,6 +188,7 @@ password
 if(usuario){
 
 
+
 crearSesion(usuario);
 
 
@@ -198,7 +198,7 @@ mensaje.style.color="green";
 
 mensaje.textContent=
 
-"Bienvenido "+usuario.nombre;
+"Bienvenido " + usuario.nombre;
 
 
 
@@ -212,10 +212,11 @@ mensaje.style.color="red";
 
 mensaje.textContent=
 
-"Correo o contraseña incorrectos";
+"Datos incorrectos";
 
 
 }
+
 
 
 }
@@ -227,7 +228,7 @@ mensaje.textContent=
 mostrarPassword(){
 
 
-let input =
+let campo =
 
 this.shadowRoot
 
@@ -235,10 +236,10 @@ this.shadowRoot
 
 
 
-if(input.type==="password"){
+if(campo.type==="password"){
 
 
-input.type="text";
+campo.type="text";
 
 
 }
@@ -246,10 +247,11 @@ input.type="text";
 else{
 
 
-input.type="password";
+campo.type="password";
 
 
 }
+
 
 
 }
