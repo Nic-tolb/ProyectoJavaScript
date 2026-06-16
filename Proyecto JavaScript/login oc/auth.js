@@ -1,77 +1,54 @@
-export function usuariosIniciales(){
-    
+export function usuariosIniciales() {
 
-let usuarios = localStorage.getItem("usuarios");
+    let usuarios = localStorage.getItem("usuarios");
 
+    if (!usuarios) {
 
-if(!usuarios){
+        let datos = [
+            {
+                nombre: "Administrador",
+                email: "admin@acme.edu",
+                password: "admin123",
+                cargo: "Administrativo"
+            }
+        ];
 
+        localStorage.setItem("usuarios", JSON.stringify(datos));
 
-let datos = [
-
-{
-nombre:"Administrador",
-email:"admin@gmail.com",
-password:"1234",
-cargo:"Administrativo"
-}
-
-];
-
-
-localStorage.setItem(
-
-"usuarios",
-
-JSON.stringify(datos)
-
-);
-
+    }
 
 }
 
+export function validarUsuario(email, password) {
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    let usuario = usuarios.find(
+        (user) => user.email === email && user.password === password
+    );
+
+    return usuario;
 
 }
 
-
-
-export function validarUsuario(email,password){
-
-
-let usuarios = JSON.parse(
-
-localStorage.getItem("usuarios")
-
-) || [];
-
-
-
-let usuario = usuarios.find(
-
-(user)=> 
-
-user.email === email &&
-
-user.password === password
-
-);
-
-
-
-return usuario;
-
-
+export function crearSesion(usuario) {
+    localStorage.setItem("sesion", JSON.stringify(usuario));
 }
 
+export function registrarUsuario(nombre, email, password) {
 
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-export function crearSesion(usuario){
+    let existe = usuarios.find((u) => u.email === email);
 
+    if (existe) {
+        return false;
+    }
 
-localStorage.setItem(
+    usuarios.push({ nombre, email, password, cargo: "Estudiante" });
 
-"sesion",
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-JSON.stringify(usuario)
+    return true;
 
-);}
+}
