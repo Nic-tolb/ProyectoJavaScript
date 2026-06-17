@@ -18,7 +18,7 @@
         </div>
         <nav id="navbar-menu">
             <ul>
-                <li><a href="#" id="nav-resolver">Resolver examen</a></li>
+                <li><a href="resolver_examen.html" id="nav-resolver">Resolver examen</a></li>
                 <li><a href="#" id="nav-usuarios">Usuarios</a></li>
                 <li><a href="#" id="nav-examenes" class="active">Exámenes</a></li>
             </ul>
@@ -42,18 +42,18 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="exam-codigo">Código</label>
-                        <input type="text" id="exam-codigo" placeholder="Ej: 25-101" value="25-101" readonly>
+                        <input type="text" id="exam-codigo" placeholder="Ej: 25-101" readonly>
                     </div>
                     <div class="form-group">
                         <label for="exam-titulo">Título</label>
-                        <input type="text" id="exam-titulo" placeholder="Fundamentos de JavaScript" value="Fundamentos de JavaScript">
+                        <input type="text" id="exam-titulo" placeholder="Fundamentos de JavaScript">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="exam-tiempo">Tiempo en minutos</label>
-                        <input type="number" id="exam-tiempo" value="10">
+                        <input type="number" id="exam-tiempo" value="30">
                     </div>
                     <div class="form-group">
                         <label for="exam-porcentaje">Porcentaje de aprobación</label>
@@ -73,19 +73,19 @@
                         <div class="pregunta-item" id="pregunta-1">
                             <div class="pregunta-header">
                                 <label>Pregunta 1</label>
-                                <button type="button" id="btn-eliminar-pregunta-1" class="btn-eliminar">Eliminar</button>
+                                <button type="button" class="btn-eliminar btn-eliminar-pregunta">Eliminar</button>
                             </div>
                             <div class="pregunta-body">
-                                <textarea id="pregunta-texto-1" placeholder="¿Cuál palabra clave permite de variables..."></textarea>
+                                <textarea id="pregunta-texto-1" placeholder="¿Cuál palabra clave permite declarar variables..."></textarea>
                             </div>
                             <div class="respuestas-container" id="respuestas-1">
-                                <div class="respuesta-item" id="respuesta-1-1">
-                                    <input type="radio" id="correcta-1-1" name="correcta-1" value="1">
-                                    <input type="text" id="respuesta-texto-1-1" placeholder="Opción A" class="respuesta-input">
-                                    <button type="button" id="btn-eliminar-respuesta-1-1" class="btn-eliminar-respuesta">✕</button>
+                                <div class="respuesta-item">
+                                    <input type="radio" name="correcta-1" value="0">
+                                    <input type="text" placeholder="Opción A" class="respuesta-input">
+                                    <button type="button" class="btn-eliminar-respuesta">✕</button>
                                 </div>
                             </div>
-                            <button type="button" id="btn-agregar-respuesta-1" class="btn-agregar-respuesta">+ Agregar respuesta</button>
+                            <button type="button" class="btn-agregar-respuesta">+ Agregar respuesta</button>
                         </div>
                     </div>
 
@@ -115,17 +115,7 @@
                     </tr>
                 </thead>
                 <tbody id="examenes-tbody">
-                    <tr id="exam-row-1">
-                        <td>25-101</td>
-                        <td>Fundamentos de JavaScript</td>
-                        <td>30 min</td>
-                        <td>79%</td>
-                        <td>3</td>
-                        <td>
-                            <button id="btn-editar-exam-1" class="btn-editar">Editar</button>
-                            <button id="btn-eliminar-exam-1" class="btn-eliminar-tabla">Eliminar</button>
-                        </td>
-                    </tr>
+                    <!-- Se llenará dinámicamente con JavaScript -->
                 </tbody>
             </table>
         </section>
@@ -135,5 +125,8 @@
     <footer id="footer">
         <p>&copy; 2024 Acme School. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
 </body>
 </html>
