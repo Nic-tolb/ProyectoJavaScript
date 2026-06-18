@@ -18,9 +18,12 @@
         </div>
         <nav id="navbar-menu">
             <ul>
-                <li><a href="resolver_examen.html" id="nav-resolver">Resolver examen</a></li>
+                <li><a href="../ResolverExamen-contador/Examenes.html" id="nav-resolver">Resolver examen</a></li>
                 <li><a href="#" id="nav-usuarios">Usuarios</a></li>
                 <li><a href="#" id="nav-examenes" class="active">Exámenes</a></li>
+                <ul class="opcion-salir">
+                    <li class="Salir"><a href="../login oc/index.html">Salir</a></li>
+                </ul>
             </ul>
         </nav>
     </header>
@@ -98,6 +101,7 @@
                 </div>
             </form>
         </section>
+        <br>
 
         <!-- Exámenes Registrados Section -->
         <section id="examenes-registrados-section">
@@ -115,6 +119,24 @@
                     </tr>
                 </thead>
                 <tbody id="examenes-tbody">
+                    <!-- Se llenará dinámicamente con JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Gestión de Usuarios Section -->
+        <section id="usuarios-section" style="display: none;">
+            <h3>Usuarios registrados</h3>
+            
+            <table id="usuarios-tabla">
+                <thead>
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>EMAIL</th>
+                        <th>CARGO</th>
+                    </tr>
+                </thead>
+                <tbody id="usuarios-tbody">
                     <!-- Se llenará dinámicamente con JavaScript -->
                 </tbody>
             </table>

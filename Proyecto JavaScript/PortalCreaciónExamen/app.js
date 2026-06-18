@@ -99,6 +99,16 @@ class GestorExamenes {
     }
 
     attachEventListeners() {
+        // Toggle de vistas de navegación
+        document.getElementById('nav-usuarios').addEventListener('click', (e) => {
+            e.preventDefault();
+            this.mostrarSeccionUsuarios();
+        });
+        document.getElementById('nav-examenes').addEventListener('click', (e) => {
+            e.preventDefault();
+            this.mostrarSeccionExamenes();
+        });
+
         // Botones principales
         document.getElementById('btn-guardar-examen').addEventListener('click', (e) => this.guardarExamen(e));
         document.getElementById('btn-cancelar').addEventListener('click', () => this.limpiarFormulario());
@@ -466,9 +476,59 @@ class GestorExamenes {
         this.contador_preguntas = 1;
         this.attachPreguntaEventListeners(1);
     }
+
+    mostrarSeccionUsuarios() {
+        document.getElementById('nav-usuarios').classList.add('active');
+        document.getElementById('nav-examenes').classList.remove('active');
+
+        document.getElementById('usuarios-section').style.display = 'block';
+        document.getElementById('crear-examen-section').style.display = 'none';
+        document.getElementById('examenes-registrados-section').style.display = 'none';
+
+        const pageHeader = document.getElementById('page-header');
+        pageHeader.querySelector('h2').textContent = 'ADMINISTRACIÓN';
+        pageHeader.querySelector('h1').textContent = 'Gestión de usuarios';
+        pageHeader.querySelector('p').textContent = 'Visualiza los usuarios registrados en la plataforma.';
+
+        this.cargarUsuarios();
+    }
+
+    mostrarSeccionExamenes() {
+        document.getElementById('nav-examenes').classList.add('active');
+        document.getElementById('nav-usuarios').classList.remove('active');
+
+        document.getElementById('usuarios-section').style.display = 'none';
+        document.getElementById('crear-examen-section').style.display = 'block';
+        document.getElementById('examenes-registrados-section').style.display = 'block';
+
+        const pageHeader = document.getElementById('page-header');
+        pageHeader.querySelector('h2').textContent = 'BANCO DE PREGUNTAS';
+        pageHeader.querySelector('h1').textContent = 'Gestión de exámenes';
+        pageHeader.querySelector('p').textContent = 'Configure exámenes, preguntas y respuestas. Cada pregunta admite una única respuesta correcta.';
+    }
+
+    cargarUsuarios() {
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        const tbody = document.getElementById('usuarios-tbody');
+        tbody.innerHTML = '';
+
+        if (usuarios.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #9ca3af;">No hay usuarios registrados</td></tr>';
+            return;
+        }
+
+        usuarios.forEach(usuario => {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${usuario.nombre}</td>
+                <td>${usuario.email}</td>
+                <td>${usuario.cargo || 'Estudiante'}</td>
+            `;
+            tbody.appendChild(fila);
+        });
+    }
 }
 
-// ==================== INICIALIZAR ====================
 document.addEventListener('DOMContentLoaded', () => {
     new GestorExamenes();
 });
