@@ -10,39 +10,26 @@
 </head>
 <body>
     <header class="Title">
-        <h1 class="Logo"><i class="fa-solid fa-book"></i><i class="fa-solid fa-chart-line"></i> Acme School</h1>
+            <div id="navbar-logo">
+                <span class="logo-text">A</span>
+                <div class="logo-info">
+                    <h3>Acme School</h3>
+                    <p>Learning platform</p>
+                </div>
+            </div>
             <nav class="Menu">
                 <ul class="opciones-main">
-                    <li class="Inicio"><a href="./login.html">Login</a></li>
-                    <li class="Acerca"><a href="./Examenes.html" target="_self">Resolver Examen</a></li>
+                    <li class="Inicio"><a href="../PortalCreaciónExamen/CrearExamen.html" target="_self">Crear Examen</a></li>
+                    <li class="Acerca"><a href="./Examenes.html" target="_self" class="active">Resolver Examen</a></li>
                 </ul>
                 <ul class="opcion-salir">
-                    <li class="Salir"><a href="./login.html">Salir</a></li>
+                    <li class="Salir"><a href="../login oc/index.html" target="_self">Salir</a></li>
                 </ul>
             </nav>
     </header>
     <main class="preview-main">
-        <div class="card-preview">
-            <span class="card-header-badge">JS-101</span>
-            <h1 class="card-title">Fundamentos de JavaScript</h1>
-            <p class="card-description">Antes de iniciar, registra los datos que quedaran asociados a tus respuestas.</p>
-            
-            <form id="form-registro" class="card-form">
-                <div class="form-group">
-                    <label for="identificacion">Numero de identificacion</label>
-                    <input type="text" id="identificacion" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" required>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="submit" class="btn-iniciar">Iniciar examen</button>
-                    <a href="./Examenes.html" class="link-volver">Volver</a>
-                </div>
-            </form>
+        <div>
+
         </div>
     </main>
     <footer>
@@ -57,6 +44,5 @@
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </footer>
-    <script src="https://kit.fontawesome.com/892cc1d79a.js" crossorigin="anonymous"></script>
-    <script src="examenes.js"></script>
+    <script src="previewExamen.js"></script>
 </html>
