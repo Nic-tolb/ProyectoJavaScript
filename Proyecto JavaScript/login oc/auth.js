@@ -4,7 +4,7 @@ export function usuariosIniciales() {
 
     if (!usuarios) {
 
-        let datos = [
+        let usuarios = [
             {
                 nombre: "Administrador",
                 email: "admin@acme.edu",
@@ -13,7 +13,7 @@ export function usuariosIniciales() {
             }
         ];
 
-        localStorage.setItem("usuarios", JSON.stringify(datos));
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     }
 
