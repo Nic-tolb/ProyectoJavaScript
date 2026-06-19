@@ -13,10 +13,10 @@
     --logo-color: rgb(13, 0, 255);
 
     /* aca guardo las tipografias */
-    --font-display: 'Orbitron', sans-serif;       /* Logo, marca */
-    --font-heading: 'Arvo', serif;                /* H1, H2 secciones */
-    --font-body:    'Arimo', sans-serif;           /* Párrafos, labels */
-    --font-ui:      'Montserrat', sans-serif;      /* Nav, botones, badges */
+    --font-display: 'Orbitron', sans-serif;       
+    --font-heading: 'Arvo', serif;                
+    --font-body:    'Arimo', sans-serif;           
+    --font-ui:      'Montserrat', sans-serif;      
 
     /* colores para la barra de navegacion */
     --nav-bg:        #0f172a;
