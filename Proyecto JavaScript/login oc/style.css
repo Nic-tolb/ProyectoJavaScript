@@ -1,6 +1,4 @@
-/* =========================================
-   1. VARIABLES GLOBALES Y FUENTES
-   ========================================= */
+/* variables para colores y letras que uso en toda la pag */
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Montserrat:wght@500;600;700&family=Orbitron:wght@700&display=swap');
 
 :root {
@@ -16,9 +14,7 @@
     --nav-accent:    #f59e0b;
 }
 
-/* =========================================
-   2. ESTILOS GLOBALES
-   ========================================= */
+/* reseteo basico para que no haya margenes raros */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -35,9 +31,7 @@ body {
     padding: 20px;
 }
 
-/* =========================================
-   3. ESTILOS DEL COMPONENTE LOGIN
-   ========================================= */
+/* aca va todo el diseño de la cajita del login */
 :host {
     display: flex;
     align-items: center;
@@ -248,9 +242,7 @@ html{
     text-decoration: underline;
 }
 
-/* =========================================
-   4. MEDIA QUERIES PARA RESPONSIVIDAD
-   ========================================= */
+/* esto es para que se vea bien en celulares (magia responsive) */
 @media (max-width: 800px) {
     .container {
         flex-direction: column;

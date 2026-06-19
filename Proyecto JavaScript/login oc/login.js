@@ -11,17 +11,15 @@ class LoginAcme extends HTMLElement {
 
     connectedCallback() {
 
-        // 1. Obtener el template desde el HTML
+        // traigo el html del template q arme
         const template = document.getElementById("login-template");
         
-        // 2. Clonar su contenido e inyectarlo en el Shadow DOM
+        // lo clono y lo meto aca adentro para q se vea
         this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-        // ==========================================
-        // LÓGICA DE JAVASCRIPT
-        // ==========================================
+        // aca empieza la logica para q funcione todo
 
-        // Evento: login
+        // logica cuando tocan el boton de entrar
         this.shadowRoot.getElementById("entrar").addEventListener("click", () => {
 
             let email = this.shadowRoot.getElementById("email").value;
@@ -50,7 +48,7 @@ class LoginAcme extends HTMLElement {
 
         });
 
-        // Evento: mostrar contrasena login
+        // el ojito para ver la contraseña en el login
         this.shadowRoot.getElementById("mostrar").addEventListener("click", () => {
 
             let input = this.shadowRoot.getElementById("password");
@@ -63,7 +61,7 @@ class LoginAcme extends HTMLElement {
 
         });
 
-        // Evento: registro
+        // cuando llenan los datos y se quieren registrar
         this.shadowRoot.getElementById("registrar").addEventListener("click", () => {
 
             let nombre = this.shadowRoot.getElementById("r-nombre").value;
@@ -89,7 +87,7 @@ class LoginAcme extends HTMLElement {
 
         });
 
-        // Evento: mostrar contrasena registro
+        // el ojito para ver la contraseña en el registro
         this.shadowRoot.getElementById("mostrar-r").addEventListener("click", () => {
 
             let input = this.shadowRoot.getElementById("r-password");
@@ -102,13 +100,13 @@ class LoginAcme extends HTMLElement {
 
         });
 
-        // Evento: cambiar a registro
+        // cambiar la pantalla del login a la de crear cuenta
         this.shadowRoot.getElementById("ir-registro").addEventListener("click", () => {
             this.shadowRoot.getElementById("vista-login").style.display = "none";
             this.shadowRoot.getElementById("vista-registro").style.display = "block";
         });
 
-        // Evento: volver al login
+        // para volver atras si ya tenian cuenta
         this.shadowRoot.getElementById("ir-login").addEventListener("click", () => {
             this.shadowRoot.getElementById("vista-registro").style.display = "none";
             this.shadowRoot.getElementById("vista-login").style.display = "block";

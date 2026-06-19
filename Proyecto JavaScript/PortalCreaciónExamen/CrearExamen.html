@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header/Navbar -->
+    <!-- barra de navegacion de arriba -->
     <header id="header">
         <div id="navbar-logo">
             <span class="logo-text">A</span>
@@ -28,16 +28,16 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- aca va todo el contenido de la pagina -->
     <main id="main-content">
-        <!-- Page Header -->
+        <!-- titulo principal -->
         <section id="page-header">
             <h2>BANCO DE PREGUNTAS</h2>
             <h1>Gestión de exámenes</h1>
             <p>Configure exámenes, preguntas y respuestas. Cada pregunta admite una única respuesta correcta.</p>
         </section>
 
-        <!-- Crear examen Section -->
+        <!-- parte donde armamos el examen -->
         <section id="crear-examen-section">
             <h3>Crear examen</h3>
             
@@ -103,52 +103,58 @@
         </section>
         <br>
 
-        <!-- Exámenes Registrados Section -->
+        <!-- lista de examenes ya hechos -->
         <section id="examenes-registrados-section">
             <h3>Exámenes registrados</h3>
             
-            <table id="examenes-tabla">
-                <thead>
-                    <tr>
-                        <th>CÓDIGO</th>
-                        <th>EXAMEN</th>
-                        <th>TIEMPO</th>
-                        <th>APROBADOS</th>
-                        <th>PREGUNTAS</th>
-                        <th>ACCIONES</th>
-                    </tr>
-                </thead>
-                <tbody id="examenes-tbody">
-                    <!-- Se llenará dinámicamente con JavaScript -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table id="examenes-tabla">
+                    <thead>
+                        <tr>
+                            <th>CÓDIGO</th>
+                            <th>EXAMEN</th>
+                            <th>TIEMPO</th>
+                            <th>APROBADOS</th>
+                            <th>PREGUNTAS</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody id="examenes-tbody">
+                        <!-- aca el JS mete los datos solos -->
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <!-- Gestión de Usuarios Section -->
+        <!-- listado de gente registrada -->
         <section id="usuarios-section" style="display: none;">
             <h3>Usuarios registrados</h3>
             
-            <table id="usuarios-tabla">
-                <thead>
-                    <tr>
-                        <th>NOMBRE</th>
-                        <th>EMAIL</th>
-                        <th>CARGO</th>
-                    </tr>
-                </thead>
-                <tbody id="usuarios-tbody">
-                    <!-- Se llenará dinámicamente con JavaScript -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table id="usuarios-tabla">
+                    <thead>
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>EMAIL</th>
+                            <th>CARGO</th>
+                            <th>EXÁMENES REALIZADOS</th>
+                            <th>CALIFICACIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usuarios-tbody">
+                        <!-- aca el JS mete los datos solos -->
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- pie de pagina aburrido -->
     <footer id="footer">
         <p>&copy; 2024 Acme School. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- cargo el JS al final asi no traba la pagina -->
     <script src="app.js"></script>
 </body>
 </html>

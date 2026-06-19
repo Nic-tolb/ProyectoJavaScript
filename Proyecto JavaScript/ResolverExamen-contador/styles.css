@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
 
-/* ─────────────────────────────────────────
-   DESIGN TOKENS
-───────────────────────────────────────── */
+/* colores y fuentes que voy a usar en todos lados */
 :root {
     --primary-color: #1575dd;
     --premium-gradient: linear-gradient(
@@ -14,13 +12,13 @@
     );
     --logo-color: rgb(13, 0, 255);
 
-    /* Typography scale */
+    /* aca guardo las tipografias */
     --font-display: 'Orbitron', sans-serif;       /* Logo, marca */
     --font-heading: 'Arvo', serif;                /* H1, H2 secciones */
     --font-body:    'Arimo', sans-serif;           /* Párrafos, labels */
     --font-ui:      'Montserrat', sans-serif;      /* Nav, botones, badges */
 
-    /* Nav tokens */
+    /* colores para la barra de navegacion */
     --nav-bg:        #0f172a;
     --nav-link:      #9ca3af;
     --nav-link-hover:#ffffff;
@@ -133,9 +131,7 @@
     color: white;
     transform: translateY(-1px);
 }
-/* ─────────────────────────────────────────
-   RESET
-───────────────────────────────────────── */
+/* reseteo para q no queden bordes blancos feos */
 * {
     margin: 0;
     padding: 0;
@@ -143,9 +139,7 @@
 }
 
 
-/* ─────────────────────────────────────────
-   HEADER / NAVBAR
-───────────────────────────────────────── */
+/* estilos para la barra de arriba */
 .Title {
     font-family: var(--font-ui);
     background-color: var(--nav-bg);
@@ -199,7 +193,7 @@
     list-style: none;
 }
 
-/* ── Links estilo del snippet ── */
+/* links del menu */
 .Menu a {
     font-family: var(--font-ui);
     font-size: 13px;
@@ -224,7 +218,7 @@
     background-color: transparent;
 }
 
-/* Botón de salir separado */
+/* el boton de salir que tiene un color distinto */
 .opcion-salir {
     list-style: none;
     margin-left: 20px;
@@ -255,9 +249,7 @@
 }
 
 
-/* ─────────────────────────────────────────
-   TIPOGRAFÍA GLOBAL
-───────────────────────────────────────── */
+/* le doy formato a los textos de toda la pagina */
 body {
     font-family: var(--font-body);
     min-height: 100vh;
@@ -294,9 +286,7 @@ p {
 }
 
 
-/* ─────────────────────────────────────────
-   HERO / SECCIÓN PRINCIPAL
-───────────────────────────────────────── */
+/* el banner grande que esta al principio */
 main {
     padding-top: 28px;
     padding-bottom: 40px;
@@ -341,9 +331,7 @@ main {
 }
 
 
-/* ─────────────────────────────────────────
-   TARJETA DE EXAMEN
-───────────────────────────────────────── */
+/* la cajita donde se muestra cada examen */
 .Examenes {
     display: flex;
     justify-content: flex-start;
@@ -385,7 +373,7 @@ main {
     padding: 10px 0 8px;
 }
 
-/* Badge ID */
+/* la chapita con el id del examen */
 .ID-Examen {
     font-family: var(--font-ui);
     font-size: 0.75em;
@@ -406,7 +394,7 @@ main {
     white-space: nowrap;
 }
 
-/* Info chips */
+/* los cuadritos con data extra */
 .info-text1,
 .info-text2,
 .info-text3 {
@@ -427,7 +415,7 @@ main {
     justify-content: center;
 }
 
-/* Botón principal */
+/* boton para empezar el examen */
 .Btn-Resolver {
     font-family: var(--font-ui);
     font-weight: 700;
@@ -458,9 +446,7 @@ main {
 }
 
 
-/* ─────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────── */
+/* el pie de pagina al final */
 footer {
     background: var(--nav-bg);
     padding: 14px 48px;
