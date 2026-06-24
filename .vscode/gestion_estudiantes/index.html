@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gestión Exámenes Acme</title>
+
+<link rel="stylesheet" href="./examen.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>Acme School</h1>
+
+<p>Gestión de exámenes</p>
+
+</header>
+
+
+
+<main>
+
+
+
+<section class="card">
+
+
+<h2>Crear examen</h2>
+
+
+
+<input id="codigo" placeholder="Código">
+
+
+<input id="titulo" placeholder="Título del examen">
+
+
+<input id="tiempo" type="number" placeholder="Tiempo minutos">
+
+
+
+<input id="porcentaje" type="number" placeholder="Porcentaje aprobación">
+
+
+
+<textarea id="descripcion" placeholder="Descripción"></textarea>
+
+
+
+
+<button id="guardar">
+
+Guardar examen
+
+</button>
+
+
+
+</section>
+
+
+
+
+<section class="card">
+
+
+<h2>Exámenes registrados</h2>
+
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+
+<th>Código</th>
+
+<th>Título</th>
+
+<th>Tiempo</th>
+
+<th>% Aprobación</th>
+
+<th>Descripción</th>
+
+<th>Acciones</th>
+
+
+
+</tr>
+
+
+</thead>
+
+
+<tbody id="tablaExamenes">
+
+
+
+</tbody>
+
+
+</table>
+
+
+
+</section>
+
+
+
+
+</main>
+
+
+<script src="./examen.js"></script>
+
+
+</body>
+
+</html>
